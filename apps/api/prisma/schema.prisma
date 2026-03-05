@@ -1,0 +1,133 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Enums ─────────────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum LandingStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum BlockType {
+  hero
+  features
+  media
+  changelog
+  cta_banner
+  nav
+  urgency_bar
+  ticker
+  stats_row
+  how_it_works
+  awards
+  timeline
+  video_demo
+  before_after
+  roadmap
+  comparison
+  pricing
+  testimonials
+  faq
+  risk_reversal
+  payment_partners
+  email_capture
+  sticky_bar
+  auth_form
+}
+
+// ── Models ────────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      Role     @default(EDITOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  landings      Landing[]
+  refreshTokens RefreshToken[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model Landing {
+  id          String        @id @default(cuid())
+  title       String
+  slug        String        @unique
+  status      LandingStatus @default(DRAFT)
+  previewToken String       @unique @default(cuid())
+  publishedAt DateTime?
+  deletedAt   DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  seoImage       String?
+  canonicalUrl   String?
+
+  createdById String
+  createdBy   User   @relation(fields: [createdById], references: [id])
+
+  blocks   Block[]
+  versions LandingVersion[]
+
+  @@index([createdById])
+  @@index([slug])
+  @@map("landings")
+}
+
+model Block {
+  id        String    @id @default(cuid())
+  landingId String
+  type      BlockType
+  order     Int
+  content   Json
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  landing Landing @relation(fields: [landingId], references: [id], onDelete: Cascade)
+
+  @@index([landingId])
+  @@map("blocks")
+}
+
+model LandingVersion {
+  id         String   @id @default(cuid())
+  landingId  String
+  snapshot   Json     // full landing + blocks at time of publish
+  createdAt  DateTime @default(now())
+
+  landing Landing @relation(fields: [landingId], references: [id], onDelete: Cascade)
+
+  @@index([landingId])
+  @@map("landing_versions")
+}

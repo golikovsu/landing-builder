@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing-template",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "4321", "template"],
+      "port": 4321
+    },
+    {
+      "name": "landing-web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@landing/web", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "landing-api",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@landing/api", "dev"],
+      "port": 4000
+    }
+  ]
+}

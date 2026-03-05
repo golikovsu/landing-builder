@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>IQ Option — Landing Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- =============================================
+     URGENCY TOP BAR
+     Conversion: scarcity / limited offer hook
+     Remove when not needed.
+     ============================================= -->
+<div class="urgency-bar" id="urgencyBar">
+  <div class="urgency-bar__inner">
+    <div class="live-dot"></div>
+    <span>🎁 Limited offer: get <strong>$10,000 demo + 3 months VIP</strong> when you open an account today</span>
+    <a href="#cta">Claim now →</a>
+  </div>
+  <button class="urgency-close" onclick="document.getElementById('urgencyBar').remove()">✕</button>
+</div>
+
+<!-- =============================================
+     HEADER
+     ============================================= -->
+<header class="header">
+  <div class="wrap">
+    <div class="header__in">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">IQ</div>
+        IQ Option
+      </a>
+      <nav class="header__nav">
+        <a href="#features">Features</a>
+        <a href="#changelog">Changelog</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header__actions">
+        <a href="#" class="btn btn-ghost btn-sm">Log In</a>
+        <a href="#cta" class="btn btn-primary btn-sm">
+          Open Account
+          <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =============================================
+     HERO VARIANT SWITCHER (dev-mode, remove in prod)
+     ============================================= -->
+<div class="variant-switcher" id="variantSwitcher">
+  <p>Hero variant</p>
+  <button class="vsw-btn active" onclick="setHero('hero--split')">① Split</button>
+  <button class="vsw-btn" onclick="setHero('hero--center')">② Centered</button>
+  <button class="vsw-btn" onclick="setHero('hero--full')">③ Full-width</button>
+  <button class="vsw-btn" onclick="setHero('hero--minimal')">④ Minimal</button>
+</div>
+
+<!-- =============================================
+     HERO — default: hero--split
+     Switch class to: hero--center / hero--full / hero--minimal
+     ============================================= -->
+<section class="hero hero--split" id="heroSection">
+  <!-- Background glows -->
+  <div class="orb orb-o" style="top:-200px;right:-200px;width:700px;height:700px;"></div>
+  <div class="orb orb-b" style="bottom:-150px;left:-100px;width:450px;height:450px;"></div>
+
+  <div class="wrap">
+    <div class="hero__in">
+
+      <!-- ─── TEXT SIDE ─── -->
+      <div class="hero__content">
+
+        <!-- Live indicator (optional conversion hook) -->
+        <div class="hero__live up">
+          <div class="live-dot"></div>
+          1,247 traders active right now
+        </div>
+
+        <div class="hero__eyebrow up d1">
+          <span class="badge-pill">🚀 Platform v3.0 — Now live</span>
+        </div>
+
+        <h1 class="hero__title t-hero up d2">
+          11 Years of Launching<br/>
+          <span class="hl">Trading Careers</span>
+        </h1>
+
+        <p class="hero__subtitle up d3">
+          Stay ahead with high-speed trading and advanced tech —
+          built for traders who demand every possible edge.
+        </p>
+
+        <!-- Button variants: choose one pair per hero -->
+        <!-- Variant A: Primary + Ghost -->
+        <div class="hero__actions up d4" id="heroActionsA">
+          <a href="#cta" class="btn btn-primary btn-xl btn-badged" data-badge="FREE">
+            Start Trading
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#demo" class="btn btn-ghost btn-xl">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M7 6.5l5 2.5-5 2.5V6.5z" fill="currentColor"/>
+            </svg>
+            Watch Demo
+          </a>
+        </div>
+
+        <p class="hero__note up d5">
+          <span>✓</span> Free $10,000 demo &nbsp;·&nbsp;
+          <span>✓</span> No credit card &nbsp;·&nbsp;
+          <span>✓</span> Withdraw anytime
+        </p>
+      </div>
+
+      <!-- ─── VISUAL SIDE ─── -->
+      <div class="hero__visual up d3">
+
+        <!-- Floating stat bubbles -->
+        <div class="hero__bubble hero__bubble--tl">
+          <div class="bubble-val">+18.4%</div>
+          <div class="bubble-lbl">Portfolio today</div>
+        </div>
+
+        <div class="hero__bubble hero__bubble--tr">
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="live-dot"></div>
+            <span style="font-size:12px;font-weight:700">LIVE</span>
+          </div>
+          <div class="bubble-lbl">Market open</div>
+        </div>
+
+        <!-- Platform screenshot placeholder -->
+        <div class="hero__screen">
+          <!-- Replace with: <img src="screenshot.png" alt="Platform"> -->
+          <svg class="hero__screen-icon" viewBox="0 0 52 52" fill="none">
+            <rect x="3" y="3" width="46" height="46" rx="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 15h46" stroke="currentColor" stroke-width="2"/>
+            <circle cx="10" cy="9" r="2.5" fill="currentColor"/>
+            <circle cx="17" cy="9" r="2.5" fill="currentColor"/>
+            <path d="M10 32l7-8 7 8 8-14 7 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Platform screenshot</span>
+        </div>
+
+        <div class="hero__bubble hero__bubble--br">
+          <div class="bubble-val">50M+</div>
+          <div class="bubble-lbl">Traders worldwide</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     LIVE ACTIVITY BAR
+     Conversion: social proof — real-time urgency
+     ============================================= -->
+<div class="activity-bar">
+  <div class="wrap" style="overflow:hidden">
+    <div class="activity-bar__track" id="activityTrack">
+      <!-- Items duplicated for seamless loop -->
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇧🇷</div>
+        <div class="activity-item__text"><b>Carlos F.</b> from Brazil just opened an account</div>
+        <span class="activity-item__tag">2 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇮🇳</div>
+        <div class="activity-item__text"><b>Priya M.</b> withdrew <b>$840</b></div>
+        <span class="activity-item__tag">4 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇺🇸</div>
+        <div class="activity-item__text"><b>James K.</b> made a profit of <b>+$312</b> today</div>
+        <span class="activity-item__tag">6 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇩🇪</div>
+        <div class="activity-item__text"><b>Anna W.</b> from Germany completed first trade</div>
+        <span class="activity-item__tag">9 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇲🇽</div>
+        <div class="activity-item__text"><b>Miguel R.</b> deposited via <b>PIX</b></div>
+        <span class="activity-item__tag">11 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇿🇦</div>
+        <div class="activity-item__text"><b>Thabo N.</b> joined the Gold tournament</div>
+        <span class="activity-item__tag">14 min ago</span>
+      </div>
+      <!-- Duplicate for loop -->
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇧🇷</div>
+        <div class="activity-item__text"><b>Carlos F.</b> from Brazil just opened an account</div>
+        <span class="activity-item__tag">2 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇮🇳</div>
+        <div class="activity-item__text"><b>Priya M.</b> withdrew <b>$840</b></div>
+        <span class="activity-item__tag">4 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇺🇸</div>
+        <div class="activity-item__text"><b>James K.</b> made a profit of <b>+$312</b> today</div>
+        <span class="activity-item__tag">6 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇩🇪</div>
+        <div class="activity-item__text"><b>Anna W.</b> from Germany completed first trade</div>
+        <span class="activity-item__tag">9 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇲🇽</div>
+        <div class="activity-item__text"><b>Miguel R.</b> deposited via <b>PIX</b></div>
+        <span class="activity-item__tag">11 min ago</span>
+      </div>
+      <div class="activity-item">
+        <div class="activity-item__avatar">🇿🇦</div>
+        <div class="activity-item__text"><b>Thabo N.</b> joined the Gold tournament</div>
+        <span class="activity-item__tag">14 min ago</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     STATS ROW
+     ============================================= -->
+<section class="stats-row">
+  <div class="wrap">
+    <div class="stats-card up">
+      <div class="stat">
+        <div class="stat__val">313<span class="o">K+</span></div>
+        <div class="stat__lbl">Active traders</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat__val">4.4<span class="o">★</span></div>
+        <div class="stat__lbl">App Store rating</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat__val">148<span class="o">M</span></div>
+        <div class="stat__lbl">Trades executed</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat__val">213<span class="o">+</span></div>
+        <div class="stat__lbl">Countries</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat__val">11<span class="o">yrs</span></div>
+        <div class="stat__lbl">In the market</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     HOW IT WORKS
+     Conversion: reduces friction / complexity fear
+     ============================================= -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">Simple start</p>
+      <h2 class="t-h1 sh__title">Trade in 3 steps</h2>
+      <p class="sh__sub">From zero to your first trade in under 5 minutes.</p>
+    </div>
+
+    <div class="steps-grid up d1">
+      <div class="steps-connector"></div>
+
+      <div class="step">
+        <div class="step__num">1</div>
+        <div class="step__icon">📝</div>
+        <h3 class="step__title">Create Account</h3>
+        <p class="step__desc">Sign up with just your email. Verification takes 30 seconds — no paperwork required to start.</p>
+        <!-- Button variant: ghost-orange for steps -->
+        <a href="#" class="btn btn-ghost-o btn-sm" style="margin-top:16px">Sign Up Free →</a>
+      </div>
+
+      <div class="step">
+        <div class="step__num">2</div>
+        <div class="step__icon">🎯</div>
+        <h3 class="step__title">Practice on Demo</h3>
+        <p class="step__desc">Get $10,000 virtual funds instantly. Test strategies on real market data — zero risk.</p>
+        <a href="#demo" class="btn btn-ghost-o btn-sm" style="margin-top:16px">Try Demo →</a>
+      </div>
+
+      <div class="step">
+        <div class="step__num">3</div>
+        <div class="step__icon">💰</div>
+        <h3 class="step__title">Trade &amp; Withdraw</h3>
+        <p class="step__desc">Deposit from $10. Trade 500+ assets. Withdraw profits in 1 business day.</p>
+        <a href="#cta" class="btn btn-ghost-o btn-sm" style="margin-top:16px">Get Started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     FEATURE CARDS
+     ============================================= -->
+<section class="section section--raised" id="features">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">Our best tech</p>
+      <h2 class="t-h1 sh__title">For your comfort</h2>
+      <p class="sh__sub">Everything rebuilt in v3.0 — faster, smarter, and more intuitive than ever.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card card-accent up">
+        <div class="fc__head">
+          <div class="fc__icon">📊</div>
+          <span class="badge b-new">New</span>
+        </div>
+        <h3 class="fc__title">Live Strategies</h3>
+        <p class="fc__desc">Follow proven strategies in real time. Copy top performers to your account — one click, no manual entry.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">Explore →</a>
+        </div>
+      </div>
+
+      <div class="feature-card card-accent up d1">
+        <div class="fc__head">
+          <div class="fc__icon">⚡</div>
+          <span class="badge b-improved">Improved</span>
+        </div>
+        <h3 class="fc__title">High-Speed Execution</h3>
+        <p class="fc__desc">Orders in under 50ms, zero slippage during peak volatility. Co-located servers in 12 data centres.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">See specs →</a>
+        </div>
+      </div>
+
+      <div class="feature-card card-accent up d2">
+        <div class="fc__head">
+          <div class="fc__icon">🤖</div>
+          <span class="badge b-new">New</span>
+        </div>
+        <h3 class="fc__title">AI Analytics</h3>
+        <p class="fc__desc">ML-powered signals, pattern recognition, and predictive indicators — surfaced directly on every chart.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="feature-card card-accent up">
+        <div class="fc__head">
+          <div class="fc__icon">🏆</div>
+          <span class="badge b-new">New</span>
+        </div>
+        <h3 class="fc__title">Cash Tournaments</h3>
+        <p class="fc__desc">Compete globally for grand cash prizes. Select your buy-in level and strategy — winner takes the pot.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">Join →</a>
+        </div>
+      </div>
+
+      <div class="feature-card card-accent up d1">
+        <div class="fc__head">
+          <div class="fc__icon">👑</div>
+          <span class="badge b-improved">Improved</span>
+        </div>
+        <h3 class="fc__title">VIP Trading Terms</h3>
+        <p class="fc__desc">Exclusive assets, personal account manager, priority withdrawals, and boosted returns for VIP members.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">See benefits →</a>
+        </div>
+      </div>
+
+      <div class="feature-card card-accent up d2">
+        <div class="fc__head">
+          <div class="fc__icon">🔒</div>
+          <span class="badge b-fixed">Fixed</span>
+        </div>
+        <h3 class="fc__title">Instant Withdrawals</h3>
+        <p class="fc__desc">Funds processed in 1 business day. 20+ methods: Visa, Mastercard, PIX, crypto, and local options.</p>
+        <div class="fc__cta">
+          <a href="#" class="btn btn-ghost-o btn-sm">Payment info →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     AWARDS & RECOGNITION
+     Conversion: authority / trust signal
+     ============================================= -->
+<section class="section" id="awards">
+  <div class="wrap">
+
+    <div class="sh--c up">
+      <p class="sh__eye">Recognition</p>
+      <h2 class="t-h1 sh__title">Trusted by industry leaders</h2>
+    </div>
+
+    <div class="awards-grid up d1">
+      <div class="award-card">
+        <div class="award-card__icon">🏅</div>
+        <div class="award-card__title">Best Trading App 2025</div>
+        <div class="award-card__sub">Global FinTech Awards</div>
+      </div>
+      <div class="award-card">
+        <div class="award-card__icon">🛡️</div>
+        <div class="award-card__title">CySEC Regulated</div>
+        <div class="award-card__sub">License #247/14</div>
+      </div>
+      <div class="award-card">
+        <div class="award-card__icon">⭐</div>
+        <div class="award-card__title">4.4 App Store Rating</div>
+        <div class="award-card__sub">Over 500,000 reviews</div>
+      </div>
+      <div class="award-card">
+        <div class="award-card__icon">🌍</div>
+        <div class="award-card__title">Most Popular Broker</div>
+        <div class="award-card__sub">LatAm & Southeast Asia</div>
+      </div>
+    </div>
+
+    <div class="media-logos up d2">
+      <div class="media-logo">Forbes</div>
+      <div class="media-logo">Bloomberg</div>
+      <div class="media-logo">TechCrunch</div>
+      <div class="media-logo">Reuters</div>
+      <div class="media-logo">FT</div>
+      <div class="media-logo">Business Insider</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     TIMELINE
+     ============================================= -->
+<section class="section section--raised" id="milestones">
+  <div class="wrap">
+    <div class="sh up">
+      <p class="sh__eye">Our history</p>
+      <h2 class="t-h1 sh__title">Milestones that built our legacy</h2>
+    </div>
+
+    <div class="timeline-track up d1">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--past"></div>
+        <div class="timeline-year">2013</div>
+        <div class="timeline-event">Platform Launch</div>
+        <div class="timeline-desc">Goes live with 10 assets and binary options</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--past"></div>
+        <div class="timeline-year">2015</div>
+        <div class="timeline-event">1M Traders</div>
+        <div class="timeline-desc">First million registered users worldwide</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--past"></div>
+        <div class="timeline-year">2017</div>
+        <div class="timeline-event">CFD & Stocks</div>
+        <div class="timeline-desc">Expanded to Forex, stocks, and crypto CFDs</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--past"></div>
+        <div class="timeline-year">2020</div>
+        <div class="timeline-event">50M Users</div>
+        <div class="timeline-desc">Global expansion across 213 countries</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--past"></div>
+        <div class="timeline-year">2024</div>
+        <div class="timeline-event">SaaS Platform</div>
+        <div class="timeline-desc">White-label solution for brokers launches</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year t-o">2026</div>
+        <div class="timeline-event">v3.0 Release</div>
+        <div class="timeline-desc">Full redesign with AI analytics & signals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     VIDEO DEMO
+     ============================================= -->
+<section class="section" id="demo">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">See it live</p>
+      <h2 class="t-h1 sh__title">Watch the Platform in Action</h2>
+      <p class="sh__sub">2 minutes. That's all it takes to see why v3.0 changes everything.</p>
+    </div>
+
+    <div class="player up d1">
+      <div class="player__inner">
+        <!-- Replace with <video> or YouTube/Vimeo iframe -->
+        <div class="btn-play btn-play" role="button" aria-label="Play demo" tabindex="0">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="player__label">2-min product walkthrough — no sign-up needed</span>
+      </div>
+    </div>
+
+    <!-- Button variant: outline below media -->
+    <div style="text-align:center;margin-top:28px" class="up d2">
+      <a href="#cta" class="btn btn-outline btn-xl">
+        Try it yourself — Free account
+        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     CHANGELOG
+     Product: versioned release notes with badges
+     ============================================= -->
+<section class="section section--raised" id="changelog">
+  <div class="wrap">
+    <div class="sh up">
+      <p class="sh__eye">What's new</p>
+      <h2 class="t-h1 sh__title">Release notes</h2>
+      <p class="sh__sub" style="max-width:600px">Every change, improvement and fix — documented.</p>
+    </div>
+
+    <div class="changelog-block up d1">
+
+      <!-- Release 3.0 — Latest -->
+      <div class="changelog-release changelog-release--latest">
+        <div class="cl-header">
+          <span class="cl-version">v3.0</span>
+          <span class="cl-date">Feb 14, 2026</span>
+          <span class="cl-tag cl-tag--latest">Latest</span>
+        </div>
+        <div class="cl-list">
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--new">New</span>
+            <span class="cl-text"><strong>AI Analytics Engine</strong> — ML-powered signals and pattern recognition now available on all chart types.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--new">New</span>
+            <span class="cl-text"><strong>Live Copy Trading</strong> — Follow top performers and mirror their trades in real time with one click.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--improved">Improved</span>
+            <span class="cl-text"><strong>Order execution speed</strong> reduced to &lt;50ms — 3× faster than v2.5 in peak load conditions.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--improved">Improved</span>
+            <span class="cl-text"><strong>Mobile UI redesign</strong> — Fully rebuilt navigation, charting, and portfolio view for iOS and Android.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--fixed">Fixed</span>
+            <span class="cl-text">Withdrawal status not updating in real time for e-wallet transactions.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--fixed">Fixed</span>
+            <span class="cl-text">Chart data gap on weekends for certain crypto assets.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Release 2.5 -->
+      <div class="changelog-release">
+        <div class="cl-header">
+          <span class="cl-version">v2.5</span>
+          <span class="cl-date">Sep 3, 2025</span>
+          <span class="cl-tag cl-tag--stable">Stable</span>
+        </div>
+        <div class="cl-list">
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--new">New</span>
+            <span class="cl-text"><strong>Cash Tournaments 2.0</strong> — Multi-round bracket system with global leaderboard and tiered prize pools.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--improved">Improved</span>
+            <span class="cl-text"><strong>Demo account</strong> — Unlimited virtual fund refills, no 30-day expiry limit.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--fixed">Fixed</span>
+            <span class="cl-text">2FA SMS delay issue on accounts registered in Brazil and Mexico.</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-badge cl-badge--deprecated">Deprecated</span>
+            <span class="cl-text"><strong>Classic binary options interface</strong> — Removed in favour of the new turbo options UI.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     BEFORE / AFTER
+     Product: show what changed visually
+     ============================================= -->
+<section class="section" id="before-after">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">v2.5 → v3.0</p>
+      <h2 class="t-h1 sh__title">See the difference</h2>
+      <p class="sh__sub">Side by side — what we rebuilt and why it matters.</p>
+    </div>
+
+    <div class="ba-wrap up d1">
+      <!-- Before -->
+      <div class="ba-col ba-col--before">
+        <div class="ba-label ba-label--before">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7h5M7 4.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" transform="rotate(45 7 7)"/></svg>
+          Before — v2.5
+        </div>
+        <div class="ba-screen">
+          <!-- Replace with actual screenshot -->
+          <svg viewBox="0 0 52 52" fill="none"><rect x="3" y="3" width="46" height="46" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M3 15h46" stroke="currentColor" stroke-width="1.5"/><path d="M10 32l7-8 7 8 8-14 7 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ba-points">
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--neg">✕</div>
+            <span>Cluttered navigation — 12 top-level menu items</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--neg">✕</div>
+            <span>Chart refresh lag of ~320ms under volatility</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--neg">✕</div>
+            <span>No signal overlay — analysis required external tools</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--neg">✕</div>
+            <span>Mobile: limited to 5 chart types</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="ba-arrow">
+        <svg viewBox="0 0 22 22" fill="none"><path d="M3 11h16M13 5l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- After -->
+      <div class="ba-col ba-col--after">
+        <div class="ba-label ba-label--after">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          After — v3.0
+        </div>
+        <div class="ba-screen">
+          <!-- Replace with actual screenshot -->
+          <svg viewBox="0 0 52 52" fill="none"><rect x="3" y="3" width="46" height="46" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M3 15h46" stroke="currentColor" stroke-width="1.5"/><path d="M10 36l7-10 7 10 8-18 7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="26" r="2.5" fill="currentColor"/></svg>
+        </div>
+        <div class="ba-points">
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--pos">✓</div>
+            <span>Focused 3-tab layout — Trading, Portfolio, Learn</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--pos">✓</div>
+            <span>Real-time chart at &lt;50ms — 6× faster rendering</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--pos">✓</div>
+            <span>AI signal overlay built-in — 17 indicators on one screen</span>
+          </div>
+          <div class="ba-point">
+            <div class="ba-icon ba-icon--pos">✓</div>
+            <span>Mobile: 23 chart types, full parity with desktop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     ROADMAP / COMING SOON
+     Product: show what's next
+     ============================================= -->
+<section class="section section--raised" id="roadmap">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">What's coming</p>
+      <h2 class="t-h1 sh__title">Product roadmap</h2>
+      <p class="sh__sub">Transparency into what we're building and when you can expect it.</p>
+    </div>
+
+    <div class="roadmap-grid up d1">
+
+      <div class="roadmap-card">
+        <div class="rm-quarter">Q4 2025</div>
+        <h3 class="rm-title">Platform Foundation</h3>
+        <span class="rm-status rm-status--done">✓ Shipped</span>
+        <div class="rm-items">
+          <div class="rm-item rm-item--done">New trading engine v3</div>
+          <div class="rm-item rm-item--done">Mobile app redesign</div>
+          <div class="rm-item rm-item--done">Chart engine upgrade</div>
+          <div class="rm-item rm-item--done">PIX & crypto payments</div>
+        </div>
+      </div>
+
+      <div class="roadmap-card roadmap-card--active">
+        <div class="rm-quarter">Q1 2026</div>
+        <h3 class="rm-title">AI & Social Layer</h3>
+        <span class="rm-status rm-status--progress">◑ In progress</span>
+        <div class="rm-items">
+          <div class="rm-item rm-item--done">AI signal engine</div>
+          <div class="rm-item rm-item--done">Copy trading v2</div>
+          <div class="rm-item rm-item--progress">Social feed & trader profiles</div>
+          <div class="rm-item rm-item--planned">AI portfolio advisor</div>
+        </div>
+      </div>
+
+      <div class="roadmap-card">
+        <div class="rm-quarter">Q2 2026</div>
+        <h3 class="rm-title">Advanced Tools</h3>
+        <span class="rm-status rm-status--planned">○ Planned</span>
+        <div class="rm-items">
+          <div class="rm-item rm-item--planned">TradingView integration</div>
+          <div class="rm-item rm-item--planned">Options strategy builder</div>
+          <div class="rm-item rm-item--planned">Backtesting simulator</div>
+          <div class="rm-item rm-item--planned">API for algo traders</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     COMPARISON TABLE
+     Conversion: competitive positioning / clarity
+     ============================================= -->
+<section class="section section--raised" id="compare">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">Why IQ Option</p>
+      <h2 class="t-h1 sh__title">How we compare</h2>
+      <p class="sh__sub">See why 50M+ traders chose IQ Option over the alternatives.</p>
+    </div>
+
+    <div class="up d1 compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-iq">⚡ IQ Option</th>
+            <th>Competitor A</th>
+            <th>Competitor B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name">Minimum deposit</td>
+            <td class="col-iq"><span class="check-p">$10</span></td>
+            <td>$100</td>
+            <td>$50</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Free demo account</td>
+            <td class="col-iq"><span class="check-y">✓</span></td>
+            <td><span class="check-n">✗</span></td>
+            <td><span class="check-y">✓</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Assets available</td>
+            <td class="col-iq"><span class="check-p">500+</span></td>
+            <td>200+</td>
+            <td>180+</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Withdrawal time</td>
+            <td class="col-iq"><span class="check-p">1 day</span></td>
+            <td>3–5 days</td>
+            <td>2–3 days</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Mobile app</td>
+            <td class="col-iq"><span class="check-y">✓</span></td>
+            <td><span class="check-y">✓</span></td>
+            <td><span class="check-n">✗</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Copy trading</td>
+            <td class="col-iq"><span class="check-y">✓</span></td>
+            <td><span class="check-n">✗</span></td>
+            <td><span class="check-n">✗</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name">Tournaments</td>
+            <td class="col-iq"><span class="check-y">✓</span></td>
+            <td><span class="check-n">✗</span></td>
+            <td><span class="check-n">✗</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name">24/7 support</td>
+            <td class="col-iq"><span class="check-y">✓</span></td>
+            <td><span class="check-y">✓</span></td>
+            <td><span class="check-n">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align:center;margin-top:28px" class="up d2">
+      <a href="#cta" class="btn btn-primary btn-xl">
+        Open Free Account
+        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     PRICING / PLANS
+     Conversion: clear value proposition, upsell
+     ============================================= -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sh--c up">
+      <p class="sh__eye">Simple pricing</p>
+      <h2 class="t-h1 sh__title">Choose your account</h2>
+      <p class="sh__sub">Start free. Upgrade when you're ready. No hidden fees.</p>
+    </div>
+
+    <div class="pricing-grid up d1">
+
+      <!-- Demo / Free -->
+      <div class="pricing-card">
+        <div class="pricing-name">Demo</div>
+        <div class="pricing-price">
+          <span class="pricing-currency"></span>
+          <span class="pricing-amount">Free</span>
+        </div>
+        <div class="pricing-period">Forever. No expiry.</div>
+        <div class="pricing-desc">Practice with $10,000 virtual funds on real market data. No risk, no deposit.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">$10,000 virtual balance</li>
+          <li class="pricing-feature">All 500+ assets available</li>
+          <li class="pricing-feature">Full charting suite</li>
+          <li class="pricing-feature">AI signals (demo mode)</li>
+          <li class="pricing-feature--no">Real profit withdrawals</li>
+          <li class="pricing-feature--no">Tournaments</li>
+          <li class="pricing-feature--no">VIP account manager</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-full">Start Demo Free</a>
+      </div>
+
+      <!-- Standard / Real -->
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-name">Standard</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">10</span>
+        </div>
+        <div class="pricing-period">Minimum deposit to go live</div>
+        <div class="pricing-desc">Everything you need to trade real assets and withdraw profits from day one.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">Real money trading from $1</li>
+          <li class="pricing-feature">500+ assets</li>
+          <li class="pricing-feature">Full charting + AI signals</li>
+          <li class="pricing-feature">Withdrawals in 1 business day</li>
+          <li class="pricing-feature">Tournaments access</li>
+          <li class="pricing-feature">24/7 live support</li>
+          <li class="pricing-feature--no">Personal account manager</li>
+        </ul>
+        <a href="#cta" class="btn btn-primary btn-full">
+          Open Real Account
+          <svg class="btn-arrow" width="16" height="16" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="pricing-note">No credit card needed to start</p>
+      </div>
+
+      <!-- VIP -->
+      <div class="pricing-card">
+        <div class="pricing-name">VIP</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">1<span style="font-size:28px">K</span></span>
+        </div>
+        <div class="pricing-period">Minimum deposit for VIP status</div>
+        <div class="pricing-desc">Exclusive terms, priority service, and boosted returns for serious traders.</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">Everything in Standard</li>
+          <li class="pricing-feature">Personal account manager</li>
+          <li class="pricing-feature">Higher return rates</li>
+          <li class="pricing-feature">Exclusive VIP assets</li>
+          <li class="pricing-feature">Priority withdrawals (same day)</li>
+          <li class="pricing-feature">Private tournaments</li>
+          <li class="pricing-feature">Dedicated phone support</li>
+        </ul>
+        <a href="#" class="btn btn-ghost-o btn-full">Learn about VIP</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     TESTIMONIALS
+     ============================================= -->
+<section class="section" id="reviews">
+  <div class="wrap">
+
+    <div class="sh--c up">
+      <p class="sh__eye">Trader voices</p>
+      <h2 class="t-h1 sh__title">
+        We've received warm greetings<br/>
+        <span class="t-o">from our traders</span>
+      </h2>
+    </div>
+
+    <!-- Trust bar -->
+    <div class="trust-bar up">
+      <div class="trust-item">
+        <div class="trust-val">313<span class="t-o">K</span></div>
+        <div class="trust-label">Active this month<br/><span class="t-3">Verified accounts</span></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div>
+          <div class="stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star" style="opacity:.4">★</span>
+          </div>
+          <div class="trust-val" style="font-size:28px">4.4</div>
+        </div>
+        <div class="trust-label">App Store &amp; Play<br/><span class="t-3">500K+ reviews</span></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-val">148<span class="t-o">M</span></div>
+        <div class="trust-label">Trades this year<br/><span class="t-3">Platform activity</span></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card up">
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Alex M.</div>
+            <div class="review-location">🇺🇸 United States</div>
+          </div>
+        </div>
+        <div class="review-stars stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="review-quote">"</div>
+        <p class="review-text">Absolutely love this traderoom! It was easier than I initially expected. The chart tools are incredibly intuitive and execution speed is insane.</p>
+      </div>
+
+      <!-- Video review placeholder -->
+      <div class="review-card review-card--video up d1">
+        <div style="width:100%;height:100%;background:var(--bg-card2);display:flex;align-items:center;justify-content:center;">
+          <span class="t-sm">Video thumbnail</span>
+        </div>
+        <div class="play-overlay">
+          <div class="btn-play btn-play--sm" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card up d2">
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Maria S.</div>
+            <div class="review-location">🇧🇷 Brazil</div>
+          </div>
+        </div>
+        <div class="review-stars stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="review-quote">"</div>
+        <p class="review-text">The platform is fast and the interface is excellent. I am really satisfied — especially the new signal indicators which helped me triple my win rate.</p>
+      </div>
+
+      <div class="review-card up d1">
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Yuki T.</div>
+            <div class="review-location">🇯🇵 Japan</div>
+          </div>
+        </div>
+        <div class="review-stars stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:.4">★</span>
+        </div>
+        <div class="review-quote">"</div>
+        <p class="review-text">I have tried 6 platforms before this one. IQ Option is the only one where withdrawal actually works fast. Got my money in 18 hours.</p>
+      </div>
+
+      <!-- Video review 2 -->
+      <div class="review-card review-card--video up d2">
+        <div style="width:100%;height:100%;background:var(--bg-card2);display:flex;align-items:center;justify-content:center;">
+          <span class="t-sm">Video thumbnail</span>
+        </div>
+        <div class="play-overlay">
+          <div class="btn-play btn-play--sm" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card up d3">
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Oluwaseun A.</div>
+            <div class="review-location">🇳🇬 Nigeria</div>
+          </div>
+        </div>
+        <div class="review-stars stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="review-quote">"</div>
+        <p class="review-text">Customer support is amazing — real humans, fast responses. The demo account let me practice for a month before risking any real money.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA below reviews -->
+    <div style="text-align:center;margin-top:40px" class="up d4">
+      <a href="#" class="btn btn-ghost btn-xl" style="margin-right:12px">Read all 500K+ reviews</a>
+      <a href="#cta" class="btn btn-primary btn-xl">Start for free today</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     FAQ
+     Conversion: handles objections, reduces exit
+     ============================================= -->
+<section class="section section--raised" id="faq">
+  <div class="wrap" style="max-width:760px">
+
+    <div class="sh--c up">
+      <p class="sh__eye">Questions</p>
+      <h2 class="t-h1 sh__title">Frequently asked</h2>
+    </div>
+
+    <div class="faq-list up d1">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">Is IQ Option safe? Is my money protected?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>Yes. IQ Option is regulated by CySEC (license #247/14) and operates under EU financial laws. Client funds are held in segregated accounts, completely separate from company funds. Your balance is protected up to €20,000 under the Investor Compensation Fund.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">How much do I need to start trading?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>The minimum deposit is $10. Individual trades can be as small as $1. You can also practice as long as you need on the demo account with $10,000 virtual funds — completely free, no deposit required.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">How fast are withdrawals processed?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>Withdrawal requests are processed within 1 business day. The funds then take 1–5 business days to arrive depending on your payment method. Bank cards: 1–3 days. E-wallets (Skrill, Neteller): same day. Crypto: within hours.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">What assets can I trade on IQ Option?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>Over 500 instruments including: Forex pairs (70+), Stocks (100+), Crypto CFDs (30+), Commodities (gold, oil, silver), Stock indices, ETFs, and Options (where available). New assets are added regularly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">Do I need trading experience to start?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>No experience needed. The free demo account lets you learn with zero risk. We also offer a built-in education center, video tutorials, market analysis tools, and AI-powered signals to guide beginners. Most users place their first trade within 10 minutes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q__text">Is the platform available on mobile?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><p>Yes. IQ Option has native apps for iOS and Android, both rated 4.4+ stars. All features available on desktop are also available on mobile — including charts, signals, withdrawals, and tournaments. The app is free to download.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     RISK REVERSAL
+     Conversion: eliminates final hesitation
+     ============================================= -->
+<section class="section" id="risk">
+  <div class="wrap">
+
+    <div class="sh--c up">
+      <p class="sh__eye">Zero risk to start</p>
+      <h2 class="t-h1 sh__title">No risk. No excuses.</h2>
+      <p class="sh__sub">We removed every barrier so you can start without any hesitation.</p>
+    </div>
+
+    <div class="risk-grid up d1">
+      <div class="risk-card">
+        <div class="risk-card__icon">🆓</div>
+        <h3 class="risk-card__title">Free Demo Forever</h3>
+        <p class="risk-card__desc">$10,000 virtual funds available immediately. Practice as long as you need — no expiry, no pressure, no deposit.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card__icon">💳</div>
+        <h3 class="risk-card__title">No Credit Card Required</h3>
+        <p class="risk-card__desc">Create an account and use all demo features without entering any payment details. Ever.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card__icon">💸</div>
+        <h3 class="risk-card__title">Withdraw Anytime</h3>
+        <p class="risk-card__desc">Your money. Your rules. Withdraw any amount at any time, processed within 1 business day.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px" class="up d2">
+      <a href="#cta" class="btn btn-primary btn-xl btn-badged" data-badge="FREE">
+        Start Risk-Free
+        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     PAYMENT PARTNERS
+     ============================================= -->
+<section class="section section--raised" style="padding:40px 0">
+  <div class="wrap">
+    <p class="partners-label up">Fast &amp; secure deposits &amp; withdrawals</p>
+    <div class="partners-logos up d1">
+      <div class="partner-logo">VISA</div>
+      <div class="partner-logo">Mastercard</div>
+      <div class="partner-logo">Skrill</div>
+      <div class="partner-logo">Neteller</div>
+      <div class="partner-logo">PIX</div>
+      <div class="partner-logo">Wire</div>
+      <div class="partner-logo">Bitcoin</div>
+      <div class="partner-logo">USDT</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     EMAIL CAPTURE
+     Conversion: lead gen / product update subscribers
+     ============================================= -->
+<section class="section" id="subscribe">
+  <div class="wrap" style="max-width:720px">
+    <div class="email-capture up">
+      <div class="email-capture__orb"></div>
+      <p class="email-capture__eyebrow">Stay in the loop</p>
+      <h2 class="email-capture__title">Get notified on every update</h2>
+      <p class="email-capture__sub">Join 80,000+ traders who get release notes, new feature guides, and platform tips — straight to their inbox.</p>
+
+      <form class="email-form" onsubmit="handleSubscribe(event)">
+        <input
+          class="email-form__input"
+          type="email"
+          placeholder="Your email address"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="btn btn-primary">
+          Subscribe
+          <svg class="btn-arrow" width="16" height="16" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <p class="email-form__note">No spam. Unsubscribe at any time. By subscribing you agree to our Privacy Policy.</p>
+
+      <div class="email-benefits">
+        <span class="email-benefit">Weekly release notes</span>
+        <span class="email-benefit">New feature deep-dives</span>
+        <span class="email-benefit">Trading tips & strategies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =============================================
+     CTA BANNER
+     ============================================= -->
+<section class="cta-banner cta-banner--orange" id="cta">
+  <div class="cta-banner__bg-orb"></div>
+  <div class="wrap">
+    <div class="cta-banner__in up">
+      <h2 class="cta-banner__title">Ready to Start Your Trading Career?</h2>
+      <p class="cta-banner__sub">Join 50M+ traders. Open a free account in 30 seconds.</p>
+      <div class="cta-actions">
+        <!-- White button on orange bg -->
+        <a href="#" class="btn btn-white btn-xl">
+          Open Free Account
+          <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <!-- Ghost light on orange bg -->
+        <a href="#demo" class="btn btn-xl" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.40)">
+          Try Demo First
+        </a>
+      </div>
+      <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.70)">
+        No credit card · Free $10,000 demo · Withdraw anytime
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     STICKY BOTTOM BAR
+     Conversion: always-visible CTA
+     ============================================= -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-bar__text">
+    🔥 <span>1,247 traders</span> signed up today — join them risk-free
+  </span>
+  <div class="sticky-bar__actions">
+    <a href="#cta" class="btn btn-primary btn-sm">Open Free Account</a>
+    <a href="#demo" class="btn btn-dark btn-sm">Try Demo</a>
+  </div>
+  <button class="sticky-close" onclick="closeStickyBar()">✕</button>
+</div>
+
+<!-- =============================================
+     SOCIAL PROOF TOASTS
+     Conversion: FOMO / activity signal
+     ============================================= -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- =============================================
+     SCRIPTS
+     ============================================= -->
+<script>
+  /* ── Scroll animations ── */
+  const io = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') }),
+    { threshold: 0.10 }
+  );
+  document.querySelectorAll('.up').forEach(el => io.observe(el));
+
+  /* ── Hero variant switcher ── */
+  function setHero(cls) {
+    const hero = document.getElementById('heroSection');
+    hero.className = 'hero ' + cls;
+    document.querySelectorAll('.vsw-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  /* ── Sticky bar ── */
+  let stickyDismissed = false;
+  window.addEventListener('scroll', () => {
+    if (stickyDismissed) return;
+    const bar = document.getElementById('stickyBar');
+    if (window.scrollY > 600) bar.classList.add('visible');
+    else bar.classList.remove('visible');
+  });
+  function closeStickyBar() {
+    document.getElementById('stickyBar').classList.remove('visible');
+    stickyDismissed = true;
+  }
+
+  /* ── FAQ accordion ── */
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Social proof toasts ── */
+  const toastData = [
+    { flag: '🇧🇷', name: 'Carlos F.', action: 'just opened an account', time: '2 min ago' },
+    { flag: '🇮🇳', name: 'Priya M.', action: 'withdrew $840 successfully', time: '4 min ago' },
+    { flag: '🇩🇪', name: 'Anna W.', action: 'made her first deposit', time: '7 min ago' },
+    { flag: '🇲🇽', name: 'Miguel R.', action: 'won $200 in a tournament', time: '12 min ago' },
+    { flag: '🇿🇦', name: 'Thabo N.', action: 'joined IQ Option VIP', time: '18 min ago' },
+    { flag: '🇵🇭', name: 'Rico D.', action: 'completed a $312 profit trade', time: '22 min ago' },
+  ];
+
+  let toastIdx = 0;
+  function showToast() {
+    const stack = document.getElementById('toastStack');
+    const d = toastData[toastIdx % toastData.length];
+    const el = document.createElement('div');
+    el.className = 'toast';
+    el.innerHTML = `
+      <div class="toast__avatar">${d.flag}</div>
+      <div class="toast__text">
+        <b>${d.name}</b>
+        ${d.action}
+        <div class="toast__time">${d.time}</div>
+      </div>`;
+    stack.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 500);
+    }, 4000);
+    toastIdx++;
+  }
+
+  // Show first toast after 4s, then every 8s
+  setTimeout(() => {
+    showToast();
+    setInterval(showToast, 8000);
+  }, 4000);
+
+  /* ── Email subscribe ── */
+  function handleSubscribe(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('.email-form__input');
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Subscribed!';
+    btn.disabled = true;
+    btn.style.background = '#2ecc71';
+    input.disabled = true;
+    input.value = input.value;
+  }
+</script>
+
+</body>
+</html>

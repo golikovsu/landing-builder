@@ -1,6 +1,6 @@
 import { Pool } from 'pg'
 import { PrismaPg } from '@prisma/adapter-pg'
-import { PrismaClient } from '../generated/prisma/client.js'
+import { PrismaClient } from '@prisma/client'
 
 // Singleton pattern — reuse the same client across hot reloads in dev
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }

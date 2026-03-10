@@ -1,6 +1,5 @@
 {
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter @landing/shared build && pnpm --filter @landing/web build",
-  "outputDirectory": "apps/web/.next",
-  "framework": "nextjs"
+  "outputDirectory": "apps/web/.next"
 }

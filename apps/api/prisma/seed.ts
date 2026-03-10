@@ -1,8 +1,8 @@
 import 'dotenv/config'
+import bcrypt from 'bcrypt'
 import { Pool } from 'pg'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '@prisma/client'
-import { hashPassword } from '../src/services/auth.service.js'
 
 const pool = new Pool({ connectionString: process.env['DATABASE_URL'] })
 const adapter = new PrismaPg(pool)
@@ -18,7 +18,7 @@ async function main() {
     return
   }
 
-  const hashed = await hashPassword(password)
+  const hashed = await bcrypt.hash(password, 12)
   const user = await prisma.user.create({
     data: { email, password: hashed, name: 'Admin', role: 'ADMIN' },
   })

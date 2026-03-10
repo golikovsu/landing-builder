@@ -22,4 +22,4 @@ RUN pnpm --filter @landing/shared build && \
 
 EXPOSE 4000
 
-CMD ["sh", "-c", "pnpm --filter @landing/api db:migrate:prod && pnpm --filter @landing/api db:seed && node apps/api/dist/index.js"]
+CMD ["sh", "-c", "pnpm --filter @landing/api db:migrate:prod && (pnpm --filter @landing/api db:seed || echo 'Seed skipped') && node apps/api/dist/index.js"]
